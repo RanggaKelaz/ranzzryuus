@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranz Apex - Shadow Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">RANZ RYU</div>
+            <div class="loading-text">Ranz The Shadows</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">RANZ</span>
+                    <span class="logo-shadow">SHADOW</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#" class="nav-link active" data-section="home">Home</a>
+                    <a href="#" class="nav-link" data-section="bio">Bio</a>
+                    <a href="#" class="nav-link" data-section="help">Help Center</a>
+                    <a href="#" class="nav-link" data-section="admin">Admin</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-background">
+                    <div class="anime-bg"></div>
+                </div>
+                <div class="website-container">
+                    <div class="website-header">
+                        <div class="website-controls">
+                            <div class="control-btn close"></div>
+                            <div class="control-btn minimize"></div>
+                            <div class="control-btn maximize"></div>
+                        </div>
+                        <div class="website-url">Ranz Panel</div>
+                    </div>
+                    <iframe 
+                        src="https://ranzzryuu-shadow.pages.dev/" 
+                        class="website-iframe"
+                        title="Ranz Shadow Website"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+                    </iframe>
+                    <div class="iframe-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span style="margin-left: 0.5rem;">Klik untuk berinteraksi</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section id="bio" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-user-circle"></i>
+                    Bio Profile
+                </h2>
+                <div class="bio-container">
+                    <div class="bio-card">
+                        <div class="bio-avatar">
+                            <img src="assets/images/anime_bg_1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <div class="bio-content">
+                            <h3 class="bio-name">Ranz Ryu</h3>
+                            <p class="bio-title">The Shadow</p>
+                            <div class="bio-description" id="bio-description">
+                                <p>Selamat datang di dunia bayangan. Saya adalah Ranz, seorang yang hidup dalam kegelapan namun mencari cahaya.</p>
+                                <p>Dalam perjalanan ini, saya berbagi cerita, pengalaman, dan pemikiran tentang kehidupan yang penuh misteri.</p>
+                            </div>
+                            <div class="bio-stats">
+                                <div class="stat">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Dreams</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Stories</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Shadows</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Center Section -->
+        <section id="help" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-life-ring"></i>
+                    Help Center
+                </h2>
+                <div class="help-container">
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>Bantuan WhatsApp</h3>
+                        <p>Butuh bantuan? Hubungi kami melalui WhatsApp untuk mendapatkan respon cepat.</p>
+                        <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat WhatsApp
+                        </button>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>FAQ</h3>
+                        <p>Temukan jawaban untuk pertanyaan yang sering diajukan.</p>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Apa itu Ranz Shadow?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Ranz Shadow adalah platform personal yang menampilkan profil dan konten dari Ranz Ryu.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Bagaimana cara menghubungi admin?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Anda dapat menghubungi admin melalui WhatsApp atau menggunakan panel admin jika memiliki akses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Admin Panel
+                </h2>
+                <div class="admin-container">
+                    <!-- Login Form -->
+                    <div id="admin-login" class="admin-login">
+                        <div class="login-card">
+                            <div class="login-header">
+                                <i class="fas fa-lock"></i>
+                                <h3>Admin Login</h3>
+                            </div>
+                            <form id="login-form" onsubmit="adminLoginSecure(event)">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    Login
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Admin Dashboard -->
+                    <div id="admin-dashboard" class="admin-dashboard hidden">
+                        <div class="dashboard-header">
+                            <h3>Dashboard Admin</h3>
+                            <button class="btn btn-danger" onclick="adminLogout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </button>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <!-- Maintenance Mode -->
+                            <div class="admin-card">
+                                <h4><i class="fas fa-tools"></i> Mode Maintenance</h4>
+                                <div class="maintenance-control">
+                                    <label class="switch">
+                                        <input type="checkbox" id="maintenance-toggle" onchange="toggleMaintenance()">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span id="maintenance-status">Nonaktif</span>
+                                </div>
+                            </div>
+
+                            <!-- Bio Management -->
+                            <div class="admin-card">
+                                <h4><i class="fas fa-user-edit"></i> Manajemen Bio</h4>
+                                <div class="bio-management">
+                                    <textarea id="bio-editor" placeholder="Masukkan bio baru..."></textarea>
+                                    <div class="bio-buttons">
+                                        <button class="btn btn-success" onclick="saveBio()">
+                                            <i class="fas fa-save"></i> Simpan Bio
+                                        </button>
+                                        <button class="btn btn-warning" onclick="resetBio()">
+                                            <i class="fas fa-undo"></i> Reset Bio
+                                        </button>
+                                        <button class="btn btn-danger" onclick="deleteBio()">
+                                            <i class="fas fa-trash"></i> Hapus Bio
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Site Statistics -->
+                            <div class="admin-card">
+                                <h4><i class="fas fa-chart-bar"></i> Statistik Site</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-value" id="visitor-count">0</span>
+                                        <span class="stat-label">Pengunjung</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value" id="page-views">0</span>
+                                        <span class="stat-label">Page Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance Mode Overlay -->
+        <div id="maintenance-overlay" class="maintenance-overlay hidden">
+            <div class="maintenance-content">
+                <div class="maintenance-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2>Mode Maintenance</h2>
+                <p>Website sedang dalam perbaikan. Silakan kembali lagi nanti.</p>
+                <div class="maintenance-animation">
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anti-DDoS Protection Notice -->
+        <div class="protection-notice">
+            <i class="fas fa-shield-alt"></i>
+            <strong>Anti-DDoS Protection Active</strong><br>
+            This site is protected against malicious attacks.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
